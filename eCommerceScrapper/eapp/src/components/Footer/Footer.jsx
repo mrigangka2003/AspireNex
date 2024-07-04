@@ -4,11 +4,12 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import {Link} from "react-router-dom"
 
 
 const FooterComponent = () => {
   return (
-    <footer className="w-full bg-slate-950 text-gray-400 py-2">
+    <footer className="w-full bg-slate-950 tLinkxt-gray-400 py-2">
       <div className="container mx-auto flex flex-col items-center space-y-2 md:space-y-0 md:flex-row md:justify-between">
         <div className="w-[125px]">Webwise</div>
         <p>&copy; 2024 Webwise. All rights reserved.</p>
@@ -17,25 +18,25 @@ const FooterComponent = () => {
           <p className="mb-6 lg:mb-0 text-lg font-semibold">Legal</p>
           <ul className="flex flex-col lg:flex-row lg:space-x-4 text-[14px] font-medium">
             <li className="mb-2 lg:mb-0">
-              <a
+              <Link
                 href="/privacy-policy"
                 className="text-white hover:text-gray-300"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </li>
             <li className="mb-2 lg:mb-0">
-              <a
+              <Link
                 href="/cookie-policy"
                 className="text-white hover:text-gray-300"
               >
                 Cookie Policy
-              </a>
+              </Link>
             </li>
             <li className="mb-2 lg:mb-0">
-              <a href="/disclaimer" className="text-white hover:text-gray-300">
+              <Link href="/disclaimer" className="text-white hover:text-gray-300">
                 Disclaimer
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
