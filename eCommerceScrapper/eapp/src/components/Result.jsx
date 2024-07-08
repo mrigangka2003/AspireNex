@@ -1,6 +1,6 @@
 import demoP from "../assets/images/demoP.jpg";
 
-const Result = ({data}) => {
+const Result = ({ data }) => {
   return (
     <div className="flex flex-col md:flex-row w-full md:w-3/5 justify-center items-stretch rounded-lg">
       <div className="bg-white w-full p-4 flex justify-center items-center">
@@ -11,9 +11,10 @@ const Result = ({data}) => {
         />
       </div>
       <div className="bg-red-900 w-full p-4 text-white flex flex-col justify-center">
-      <h2 className="text-xl font-bold mb-2">{data.title}</h2>
+        <h2 className="text-xl font-bold mb-2">{data.title}</h2>
         <p className="text-base mb-2">Price: {data.price}</p>
         <p className="text-base mb-2">Rating: {data.rating}</p>
+        <p className="text-base mb-2">Reviews: {data.reviews}</p>
         <div className="text-base">
           <h3 className="text-lg font-bold mb-2">Specifications:</h3>
           <ul>

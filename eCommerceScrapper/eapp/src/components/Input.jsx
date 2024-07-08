@@ -30,7 +30,7 @@ const Input = ({ setResult, setError }) => {
   };
 
   const handleFormSubmit = async (e) => {
-    e.prevent.Default();
+    e.preventDefault();
     fetchResults();
   };
 
@@ -38,6 +38,8 @@ const Input = ({ setResult, setError }) => {
     <form
       onSubmit={handleFormSubmit}
       className="flex justify-center p-1 md:p-2"
+      method="post"
+      action="/"
     >
       <input
         className="border border-solid border-white p-2 w-48 md:w-80 border-l border-t border-b rounded-tl-2xl rounded-bl-2xl bg-transparent"
