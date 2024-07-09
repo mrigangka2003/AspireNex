@@ -1,11 +1,11 @@
 const Result = ({ data }) => {
   return (
     <div className="flex flex-col md:flex-row w-full md:w-3/5 justify-center items-stretch rounded-lg">
-      <div className="bg-white w-full p-4 flex justify-center items-center">
-      <img
+      <div className="bg-white w-full flex justify-center items-center">
+        <img
           src={data.imageUrl}
           alt="Product Image"
-          style={{ width: '200px', height: '200px', objectFit: 'cover' }} 
+          className="w-full h-auto object-cover"
         />
       </div>
       <div className="bg-zinc-900 w-full p-4 text-white flex flex-col justify-center">
