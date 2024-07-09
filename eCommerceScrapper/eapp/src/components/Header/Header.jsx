@@ -19,16 +19,6 @@ const Header = () => {
                 Home
               </NavLink>
             </li>
-            <li className="px-2 text-sm">
-              <NavLink
-                to={"/products"}
-                className={({ isActive }) =>
-                  isActive ? "font-bold" : "font-normal"
-                }
-              >
-                Products
-              </NavLink>
-            </li>
           </ul>
         </nav>
       </header>

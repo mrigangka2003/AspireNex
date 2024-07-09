@@ -1,6 +1,6 @@
-import { useState} from "react";
+import { useState } from "react";
 
-const Input = ({ setResult, setError }) => {
+const Input = ({ setResult, setError, setLoading }) => {
   const [url, setUrl] = useState("");
 
   const handleInputChange = (e) => {
@@ -8,24 +8,30 @@ const Input = ({ setResult, setError }) => {
   };
 
   const fetchResults = async () => {
-    try {
-      const response = await fetch('http://localhost:5173/',{
-        method:'POST',
-        headers:{
-          'Content-Type' : 'application/json'
-        },
-        body:JSON.stringify({url})
-      })
+    setLoading(true);
+    setError(false); 
+    setResult(null);
 
-      if(!response.ok){
-        throw new Error('Network response was not ok');
+    try {
+      const response = await fetch("http://localhost:8000/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
 
-      const data = await response.json() ;
-      setResult(data) ;
+      const data = await response.json();
+      setResult(data);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
       setError(true);
+    } finally {
+      setLoading(false);
     }
   };
 

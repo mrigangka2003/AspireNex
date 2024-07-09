@@ -6,6 +6,7 @@ import { Switch, FormControlLabel, Button } from "@mui/material";
 const Home = () => {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [compare, setCompare] = useState(false);
   const [result2, setResult2] = useState(null);
   const [error2, setError2] = useState(false);
@@ -32,8 +33,8 @@ const Home = () => {
       </div>
       <div className="w-full max-w-md px-4 my-4">
         <div className="flex items-center">
-          <Input setResult={setResult} setError={setError} />
-          <FormControlLabel
+          <Input setResult={setResult} setError={setError} setLoading={setLoading} />
+          {/* <FormControlLabel
             control={
               <Switch
                 checked={compare}
@@ -44,10 +45,10 @@ const Home = () => {
             label="Compare"
             labelPlacement="start"
             className="ml-4"
-          />
+          /> */}
         </div>
       </div>
-      {compare && (
+      {/* {compare && (
         <div className="w-full max-w-md px-4 my-4 flex flex-col items-center">
           <Input setResult={setResult2} setError={setError2} />
           <Button
@@ -59,14 +60,19 @@ const Home = () => {
             Compare Results
           </Button>
         </div>
-      )}
+      )} */}
       <div className="flex flex-col items-center w-full max-w-4xl px-4 my-1">
+      {loading && <p className=" text-white mt-4 text-2xl" >Loading...</p>}
         {result && <Result data={result} />}
-        {compare && bothResultsFetched && result2 && <Result data={result2} />}
-        {(error || error2) && (
+        {/* {compare && bothResultsFetched && result2 && <Result data={result2} />}
+        {(bothResultsFetched &&(error || error2) ) && (
           <p className="bg-white text-red-700 mt-4">
             Something Went Wrong
           </p>
+        )}  */}
+
+        {error && (
+          <p className="bg-white text-red-700 mt-4">Something Went Wrong</p>
         )}
       </div>
     </div>
